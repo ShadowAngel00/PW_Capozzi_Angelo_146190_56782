@@ -28,7 +28,7 @@ flowchart TD
 
 - **TypeScript ([script.ts](script.ts))**: Sviluppo della logica con tipizzazione forte per ridurre errori a runtime.
 - **JavaScript ([script.js](script.js))**: Output compilato per l'esecuzione cross-browser.
-- **HTML5/CSS3 ([prenotazione.html](prenotazione.html))**: Struttura semantica e integrazione con il sistema di stile globale.
+- **HTML/CSS ([prenotazione.html](prenotazione.html))**: Struttura semantica e integrazione con il sistema di stile globale.
 
 ## 4. Logica di Business e Vincoli
 
