@@ -7,20 +7,20 @@ Benvenuti nel repository ufficiale del **Neon Pulse Festival 2026**, un progetto
 Il progetto è organizzato per separare chiaramente i contenuti informativi dalla logica applicativa:
 
 ### 🌐 Sito Web (Root)
-- **[index.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/index.html)**: Home page con presentazione e highlights.
-- **[eventi.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/eventi.html)**: Programmazione dettagliata del festival.
-- **[info.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/info.html)**: Logistica, FAQ e contatti.
-- **[gallery.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/gallery.html)**: Esperienza visiva delle edizioni passate.
-- **[registrazione.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/registrazione.html)**: Pagina di accesso alla prenotazione.
+- **[index.html](index.html)**: Home page con presentazione e highlights.
+- **[eventi.html](eventi.html)**: Programmazione dettagliata del festival.
+- **[info.html](info.html)**: Logistica, FAQ e contatti.
+- **[gallery.html](gallery.html)**: Esperienza visiva delle edizioni passate.
+- **[registrazione.html](registrazione.html)**: Pagina di accesso alla prenotazione.
 
 ### ⚙️ Applicativo di Booking (`/applicativo`)
-- **[prenotazione.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/prenotazione.html)**: Interfaccia utente dell'applicativo.
-- **[script.ts](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.ts)**: Logica di business scritta in TypeScript.
-- **[script.js](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.js)**: File compilato per la produzione.
-- **[DOCUMENTO_ARCHITETTURALE_APP.md](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Dettagli tecnici della logica.
+- **[prenotazione.html](applicativo/prenotazione.html)**: Interfaccia utente dell'applicativo.
+- **[script.ts](applicativo/script.ts)**: Logica di business scritta in TypeScript.
+- **[script.js](applicativo/script.js)**: File compilato per la produzione.
+- **[DOCUMENTO_ARCHITETTURALE_APP.md](applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Dettagli tecnici della logica.
 
 ### 🎨 Asset e Stile (`/style`)
-- **[style.css](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/style/style.css)**: Framework CSS unificato per l'intero progetto.
+- **[style.css](style/style.css)**: Framework CSS unificato per l'intero progetto.
 
 ## 🚀 Caratteristiche Principali
 
@@ -39,8 +39,8 @@ Il progetto è organizzato per separare chiaramente i contenuti informativi dall
 ## 📄 Documentazione Tecnica
 
 Per una visione approfondita dell'architettura, consulta i seguenti documenti:
-1.  **[Architettura Sito Web](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/DOCUMENTO_ARCHITETTURALE_SITO.md)**: Include la sitemap grafica.
-2.  **[Architettura Applicativo](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Include lo schema logico del flusso dati.
+1.  **[Architettura Sito Web](DOCUMENTO_ARCHITETTURALE_SITO.md)**: Include la sitemap grafica.
+2.  **[Architettura Applicativo](applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Include lo schema logico del flusso dati.
 
 ---
 *Progetto realizzato per il Project Work - Neon Pulse Festival 2026.*

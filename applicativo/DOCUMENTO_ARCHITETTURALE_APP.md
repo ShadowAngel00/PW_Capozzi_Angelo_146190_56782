@@ -26,9 +26,9 @@ flowchart TD
 
 ## 3. Tecnologie Utilizzate
 
-- **TypeScript ([script.ts](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.ts))**: Sviluppo della logica con tipizzazione forte per ridurre errori a runtime.
-- **JavaScript ([script.js](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.js))**: Output compilato per l'esecuzione cross-browser.
-- **HTML5/CSS3 ([prenotazione.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/prenotazione.html))**: Struttura semantica e integrazione con il sistema di stile globale.
+- **TypeScript ([script.ts](script.ts))**: Sviluppo della logica con tipizzazione forte per ridurre errori a runtime.
+- **JavaScript ([script.js](script.js))**: Output compilato per l'esecuzione cross-browser.
+- **HTML5/CSS3 ([prenotazione.html](prenotazione.html))**: Struttura semantica e integrazione con il sistema di stile globale.
 
 ## 4. Logica di Business e Vincoli
 
