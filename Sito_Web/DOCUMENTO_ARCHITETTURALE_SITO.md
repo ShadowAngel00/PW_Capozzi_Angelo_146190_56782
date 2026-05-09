@@ -8,7 +8,7 @@ graph TD
     A --> C[Info - info.html]
     A --> D[Gallery - gallery.html]
     A --> E[Prenota - registrazione.html]
-    E --> F[Applicativo - applicativo/prenotazione.html]
+    E --> F[Applicativo - Applicativo/prenotazione.html]
     
     subgraph Asset
     G[Stile - style/style.css]
@@ -31,7 +31,7 @@ Il sito è strutturato in modo gerarchico per facilitare la navigazione:
 - **Info ([info.html](info.html))**: Informazioni logistiche, sicurezza e contatti.
 - **Gallery ([gallery.html](gallery.html))**: Archivio fotografico delle edizioni passate.
 - **Prenota ([registrazione.html](registrazione.html))**: Pagina di atterraggio per l'utente prima dell'accesso all'acquisto.
-- **Applicativo ([prenotazione.html](applicativo/prenotazione.html))**: Form interattivo per l'acquisto dei biglietti.
+- **Applicativo ([prenotazione.html](../Applicativo/prenotazione.html))**: Form interattivo per l'acquisto dei biglietti.
 
 ## 3. Design e Stile
 

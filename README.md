@@ -14,11 +14,11 @@ Il progetto è organizzato per separare chiaramente i contenuti informativi dall
 - **[registrazione.html](Sito_Web/registrazione.html)**: Pagina di accesso alla prenotazione.
 - **[DOCUMENTO_ARCHITETTURALE_SITO.md](Sito_Web/DOCUMENTO_ARCHITETTURALE_SITO.md)**: Documentazione specifica del sito con sitemap.
 
-### ⚙️ Applicativo di Booking (`/applicativo`)
-- **[prenotazione.html](applicativo/prenotazione.html)**: Interfaccia utente dell'applicativo.
-- **[script.ts](applicativo/script.ts)**: Logica di business scritta in TypeScript.
-- **[script.js](applicativo/script.js)**: File compilato per la produzione.
-- **[DOCUMENTO_ARCHITETTURALE_APP.md](applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Dettagli tecnici della logica.
+### ⚙️ Applicativo di Booking (`/Applicativo`)
+- **[prenotazione.html](Applicativo/prenotazione.html)**: Interfaccia utente dell'applicativo.
+- **[script.ts](Applicativo/script.ts)**: Logica di business scritta in TypeScript.
+- **[script.js](Applicativo/script.js)**: File compilato per la produzione.
+- **[DOCUMENTO_ARCHITETTURALE_APP.md](Applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Dettagli tecnici della logica.
 
 ### 🎨 Asset e Stile (`/Sito_Web/style`)
 - **[style.css](Sito_Web/style/style.css)**: Framework CSS unificato per l'intero progetto.
@@ -41,7 +41,7 @@ Il progetto è organizzato per separare chiaramente i contenuti informativi dall
 
 Per una visione approfondita dell'architettura, consulta i seguenti documenti:
 1.  **[Architettura Sito Web](Sito_Web/DOCUMENTO_ARCHITETTURALE_SITO.md)**: Include la sitemap grafica.
-2.  **[Architettura Applicativo](applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Include lo schema logico del flusso dati.
+2.  **[Architettura Applicativo](Applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Include lo schema logico del flusso dati.
 
 ---
 *Progetto realizzato per il Project Work - Neon Pulse Festival 2026.*
