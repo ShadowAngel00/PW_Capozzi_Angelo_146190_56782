@@ -2,24 +2,43 @@
 
 ## 1. Descrizione Funzionale
 
-L'applicativo gestisce la prenotazione dei biglietti per il festival Neon Pulse.
+L'applicativo gestisce la prenotazione dei biglietti per il festival Neon Pulse tramite un'interfaccia interattiva e dinamica.
 
-## 2. Tecnologie Utilizzate
+## 2. Diagramma di Flusso (Logic Schema)
 
-- **TypeScript (applicativo/script.ts)**: Codice sorgente con tipizzazione statica per una maggiore sicurezza.
-- **JavaScript (applicativo/script.js)**: Versione compilata eseguita dal browser.
-- **HTML5/CSS3 (applicativo/prenotazione.html)**: Interfaccia utente interattiva e stilizzata.
+```mermaid
+flowchart TD
+    Start([Inizio]) --> Input[Inserimento Nome ed Età]
+    Input --> Select[Selezione Tipo Biglietto: Standard/VIP]
+    Select --> CheckAge{Controllo Età}
+    
+    CheckAge -- Standard < 16 --> Error[Errore: Minimo 16 anni]
+    CheckAge -- VIP < 18 --> Error
+    CheckAge -- OK --> CheckTickets{Quantità <= 5?}
+    
+    CheckTickets -- No --> ErrorTickets[Errore: Max 5 biglietti]
+    CheckTickets -- Sì --> Success[Conferma Prenotazione]
+    
+    Error --> End([Fine])
+    ErrorTickets --> End
+    Success --> End
+```
 
-## 3. Logica di Business
+## 3. Tecnologie Utilizzate
+
+- **TypeScript ([script.ts](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.ts))**: Sviluppo della logica con tipizzazione forte per ridurre errori a runtime.
+- **JavaScript ([script.js](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.js))**: Output compilato per l'esecuzione cross-browser.
+- **HTML5/CSS3 ([prenotazione.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/prenotazione.html))**: Struttura semantica e integrazione con il sistema di stile globale.
+
+## 4. Logica di Business e Vincoli
 
 - **Validazione Età**: 
-  - Standard: Minimo 16 anni.
-  - VIP: Minimo 18 anni.
-- **Limite Biglietti**: Massimo 5 biglietti per utente.
-- **Feedback**: Messaggi dinamici di successo o errore basati sulla validazione.
+  - **Standard**: Richiede un'età minima di 16 anni.
+  - **VIP**: Richiede un'età minima di 18 anni (accesso aree riservate).
+- **Limite Quantitativo**: Impedisce l'acquisto di più di 5 biglietti per singola transazione per prevenire il bagarinaggio.
+- **Feedback Dinamico**: Utilizzo di classi CSS e manipolazione del DOM per mostrare messaggi di stato in tempo reale.
 
-## 4. Struttura del Codice
+## 5. Struttura Tecnica del Codice
 
-- Interfaccia `BookingData` per la coerenza dei dati.
-- Funzione `processBooking` per il calcolo della validità.
-- Funzione `showResult` per l'aggiornamento dinamico del DOM.
+- **Interfacce**: Definizione di `BookingData` per garantire l'integrità dell'oggetto di prenotazione.
+- **Moduli**: Separazione delle responsabilità tra logica di calcolo (`processBooking`) e gestione dell'interfaccia (`showResult`).

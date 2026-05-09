@@ -1,36 +1,46 @@
-# Neon Pulse Festival 2026
+# Neon Pulse Festival 2026 - Official Project
 
-Progetto integrato del festival Neon Pulse, che include il sito web informativo e l'applicativo di prenotazione biglietti.
+Benvenuti nel repository ufficiale del **Neon Pulse Festival 2026**, un progetto web integrato che combina un sito informativo moderno con un applicativo di prenotazione biglietti dinamico.
 
-## Struttura del Progetto
-- `index.html`: Pagina principale (Home).
-- `eventi.html`: Programma del festival.
-- `info.html`: Informazioni utili e location.
-- `gallery.html`: Galleria fotografica delle edizioni passate.
-- `registrazione.html`: Pagina di atterraggio per la prenotazione.
-- `prenotazione.html`: Applicativo TypeScript per l'acquisto biglietti.
-- `booking.ts`: Logica di business per la prenotazione (TypeScript).
-- `style/`: Cartella contenente i fogli di stile CSS.
+## 📁 Struttura del Progetto
 
-## Funzionalità Applicativo Prenotazione
-- Registrazione nome utente.
-- Controllo età dinamico:
-  - **Standard**: minimo 16 anni.
-  - **VIP**: minimo 18 anni.
-- Limite massimo di 5 biglietti per transazione.
-- Feedback immediato all'utente.
+Il progetto è organizzato per separare chiaramente i contenuti informativi dalla logica applicativa:
 
-## Requisiti Tecnici
-- **TypeScript**: Utilizzato per la logica di prenotazione.
-- **Vite**: Strumento di build e server di sviluppo.
+### 🌐 Sito Web (Root)
+- **[index.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/index.html)**: Home page con presentazione e highlights.
+- **[eventi.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/eventi.html)**: Programmazione dettagliata del festival.
+- **[info.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/info.html)**: Logistica, FAQ e contatti.
+- **[gallery.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/gallery.html)**: Esperienza visiva delle edizioni passate.
+- **[registrazione.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/registrazione.html)**: Pagina di accesso alla prenotazione.
 
-## Come Avviare
-1. Assicurati di avere Node.js installato.
-2. Esegui `npm install` per installare le dipendenze (se non già presenti).
-3. Esegui `npm run dev` per avviare il server di sviluppo.
-4. Apri l'indirizzo mostrato nel terminale (solitamente `http://localhost:5173`).
+### ⚙️ Applicativo di Booking (`/applicativo`)
+- **[prenotazione.html](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/prenotazione.html)**: Interfaccia utente dell'applicativo.
+- **[script.ts](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.ts)**: Logica di business scritta in TypeScript.
+- **[script.js](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/script.js)**: File compilato per la produzione.
+- **[DOCUMENTO_ARCHITETTURALE_APP.md](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Dettagli tecnici della logica.
 
-## Documentazione
-Per approfondimenti tecnici, consulta:
-- `DOCUMENTO_ARCHITETTURALE_APP.md`
-- `DOCUMENTO_ARCHITETTURALE_SITO.md`
+### 🎨 Asset e Stile (`/style`)
+- **[style.css](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/style/style.css)**: Framework CSS unificato per l'intero progetto.
+
+## 🚀 Caratteristiche Principali
+
+- **Design Immersivo**: Estetica "Cyber-Neon" ottimizzata per la leggibilità e l'impatto visivo.
+- **Prenotazione Intelligente**: 
+  - Validazione età differenziata (Standard/VIP).
+  - Protezione contro acquisti massivi (Max 5 biglietti).
+- **Architettura Scalabile**: Codice TypeScript modulare e documentazione dettagliata.
+
+## 🛠️ Tecnologie Utilizzate
+
+- **Frontend**: HTML5, CSS3 (Custom Properties, Grid, Flexbox).
+- **Logic**: TypeScript (transpilato in JavaScript).
+- **Diagrammi**: Mermaid.js (integrato nella documentazione Markdown).
+
+## 📄 Documentazione Tecnica
+
+Per una visione approfondita dell'architettura, consulta i seguenti documenti:
+1.  **[Architettura Sito Web](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/DOCUMENTO_ARCHITETTURALE_SITO.md)**: Include la sitemap grafica.
+2.  **[Architettura Applicativo](file:///c:/Users/angyc/Desktop/Project%20work/Project_Work-Capozzi/applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Include lo schema logico del flusso dati.
+
+---
+*Progetto realizzato per il Project Work - Neon Pulse Festival 2026.*
