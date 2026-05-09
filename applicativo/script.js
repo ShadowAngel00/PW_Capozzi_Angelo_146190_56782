@@ -28,7 +28,12 @@ if (form) {
 function processBooking(data) {
     let errorMessage = '';
 
-    if (data.type === 'vip' && data.age < MIN_AGE_VIP) {
+    const nameRegex = /\d/;
+    if (nameRegex.test(data.name)) {
+        errorMessage = 'Il nome non può contenere numeri';
+    }
+
+    if (!errorMessage && data.type === 'vip' && data.age < MIN_AGE_VIP) {
         errorMessage = `Età non sufficiente per l'ingresso VIP (minimo ${MIN_AGE_VIP} anni)`;
     } else if (data.type === 'standard' && data.age < MIN_AGE_STANDARD) {
         errorMessage = `Età non sufficiente (minimo ${MIN_AGE_STANDARD} anni)`;

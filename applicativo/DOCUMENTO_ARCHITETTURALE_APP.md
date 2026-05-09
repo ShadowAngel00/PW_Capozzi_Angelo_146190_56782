@@ -32,6 +32,7 @@ flowchart TD
 
 ## 4. Logica di Business e Vincoli
 
+- **Validazione Nome**: Il sistema impedisce l'inserimento di numeri nel campo nome per garantire l'integrità dei dati.
 - **Validazione Età**: 
   - **Standard**: Richiede un'età minima di 16 anni.
   - **VIP**: Richiede un'età minima di 18 anni (accesso aree riservate).
