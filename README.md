@@ -32,7 +32,7 @@ Il progetto è organizzato per separare chiaramente i contenuti informativi dall
 
 ## 🛠️ Tecnologie Utilizzate
 
-- **Frontend**: HTML5, CSS3 (Custom Properties, Grid, Flexbox).
+- **Frontend**: HTML, CSS (Custom Properties, Grid, Flexbox).
 - **Logic**: TypeScript (transpilato in JavaScript).
 - **Diagrammi**: Mermaid.js (integrato nella documentazione Markdown).
 
