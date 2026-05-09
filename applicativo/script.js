@@ -41,7 +41,11 @@ function processBooking(data) {
     if (errorMessage) {
         showResult(errorMessage, 'error');
     } else {
-        const successText = `Grazie ${data.name}! Prenotazione confermata per ${data.tickets} biglietto/i ${data.type.toUpperCase()}.`;
+        const ticketTypeLabel = data.type === 'vip' ? 'VIP' : 'Standard';
+        const quantityLabel = data.tickets === 1 ? 'un biglietto' : `i ${data.tickets} biglietti`;
+        
+        const successText = `Grazie ${data.name}! Prenotazione confermata per ${quantityLabel} ${ticketTypeLabel}.`;
+        
         showResult(successText, 'success');
         form.reset();
     }

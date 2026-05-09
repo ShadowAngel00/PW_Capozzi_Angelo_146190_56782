@@ -35,8 +35,8 @@ flowchart TD
 - **Validazione Età**: 
   - **Standard**: Richiede un'età minima di 16 anni.
   - **VIP**: Richiede un'età minima di 18 anni (accesso aree riservate).
-- **Limite Quantitativo**: Impedisce l'acquisto di più di 5 biglietti per singola transazione per prevenire il bagarinaggio.
-- **Feedback Dinamico**: Utilizzo di classi CSS e manipolazione del DOM per mostrare messaggi di stato in tempo reale.
+- **Limite Quantitativo**: Impedisce l'acquisto di più di 5 biglietti per singola transazione.
+- **Feedback Dinamico**: Utilizzo di classi CSS e manipolazione del DOM per mostrare messaggi di stato. I messaggi di conferma sono personalizzati in base al tipo di biglietto (Standard/VIP) e al numero di biglietti (singolare/plurale).
 
 ## 5. Struttura Tecnica del Codice
 

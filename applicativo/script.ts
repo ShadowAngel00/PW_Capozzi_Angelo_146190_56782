@@ -58,7 +58,12 @@ function processBooking(data: BookingData): void {
     if (errorMessage) {
         showResult(errorMessage, 'error');
     } else {
-        const successText: string = `Grazie ${data.name}! Prenotazione confermata per ${data.tickets} biglietto/i ${data.type.toUpperCase()}.`;
+        // Logica dinamica per singolare/plurale e tipo di biglietto
+        const ticketTypeLabel = data.type === 'vip' ? 'VIP' : 'Standard';
+        const quantityLabel = data.tickets === 1 ? 'un biglietto' : `i ${data.tickets} biglietti`;
+        
+        const successText: string = `Grazie ${data.name}! Prenotazione confermata per ${quantityLabel} ${ticketTypeLabel}.`;
+        
         showResult(successText, 'success');
         if (form) {
             form.reset();
