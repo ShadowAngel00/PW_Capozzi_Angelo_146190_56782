@@ -24,4 +24,4 @@ Questo modulo gestisce la logica interattiva per la prenotazione dei biglietti d
 - **HTML5/CSS3**: Struttura e stile (collegato al framework globale in `Sito_Web/style/`).
 
 ---
-*Parte integrante del Project Work - Neon Pulse Festival 2027.*
+*Parte integrante del Project Work - Neon Pulse Festival 2026.*

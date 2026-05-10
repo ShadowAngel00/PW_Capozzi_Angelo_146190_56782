@@ -1,6 +1,6 @@
-# Neon Pulse Festival 2027 - Official Project
+# Neon Pulse Festival 2026 - Official Project
 
-Benvenuti nel repository ufficiale del **Neon Pulse Festival 2027**, un progetto web integrato che combina un sito informativo moderno con un applicativo di prenotazione biglietti dinamico.
+Benvenuti nel repository ufficiale del **Neon Pulse Festival 2026**, un progetto web integrato che combina un sito informativo moderno con un applicativo di prenotazione biglietti dinamico.
 
 ## 📁 Struttura del Progetto
 
@@ -44,4 +44,4 @@ Per una visione approfondita dell'architettura, consulta i seguenti documenti:
 2.  **[Architettura Applicativo](Applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Include lo schema logico del flusso dati.
 
 ---
-*Progetto realizzato per il Project Work - Neon Pulse Festival 2027.*
+*Progetto realizzato per il Project Work - Neon Pulse Festival 2026.*
