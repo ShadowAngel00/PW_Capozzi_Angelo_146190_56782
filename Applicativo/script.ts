@@ -1,15 +1,19 @@
-// Definizione dei limiti e delle regole
+// Configurazione del server
 export {}; // Rende il file un modulo per evitare conflitti di nomi con script.js
 
-const MAX_TICKETS: number = 5;
-const MIN_AGE_STANDARD: number = 16;
-const MIN_AGE_VIP: number = 18;
+const API_URL: string = 'http://localhost:8080/api/booking';
 
 interface BookingData {
     name: string;
     age: number;
     tickets: number;
     type: string;
+}
+
+interface BookingResponse {
+    success: boolean;
+    message: string;
+    data: BookingData;
 }
 
 // Selezioniamo gli elementi del DOM
@@ -34,50 +38,44 @@ if (form) {
                 type: typeSelect.value
             };
 
-            processBooking(formData);
+            submitBooking(formData);
         }
     });
 }
 
-function processBooking(data: BookingData): void {
-    let errorMessage: string = '';
-
-    // 0. Controllo Nome (non deve contenere numeri)
-    const nameRegex = /\d/;
-    if (nameRegex.test(data.name)) {
-        errorMessage = 'Il nome non può contenere numeri';
-    }
-
-    // 1. Controllo Età
-    if (!errorMessage && data.type === 'vip' && data.age < MIN_AGE_VIP) {
-        errorMessage = `Età non sufficiente per l'ingresso VIP (minimo ${MIN_AGE_VIP} anni)`;
-    } else if (data.type === 'standard' && data.age < MIN_AGE_STANDARD) {
-        errorMessage = `Età non sufficiente (minimo ${MIN_AGE_STANDARD} anni)`;
-    }
-
-    // 2. Controllo Numero Biglietti
-    if (!errorMessage && (data.tickets <= 0 || data.tickets > MAX_TICKETS)) {
-        errorMessage = `Numero biglietti non valido (massimo ${MAX_TICKETS} per persona)`;
-    }
-
-    // Output Risultati
-    if (errorMessage) {
-        showResult(errorMessage, 'error');
-    } else {
-        // Logica dinamica per singolare/plurale e tipo di biglietto
-        const ticketTypeLabel = data.type === 'vip' ? 'VIP' : 'Standard';
-        const quantityLabel = data.tickets === 1 ? 'un biglietto' : `i ${data.tickets} biglietti`;
+/**
+ * Invia la prenotazione al server backend
+ */
+async function submitBooking(data: BookingData): Promise<void> {
+    try {
+        showResult('Elaborazione prenotazione...', 'info');
         
-        const successText: string = `Grazie ${data.name}! Prenotazione confermata per ${quantityLabel} ${ticketTypeLabel}.`;
-        
-        showResult(successText, 'success');
-        if (form) {
-            form.reset();
+        const response = await fetch(`${API_URL}/confirm`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result: BookingResponse = await response.json();
+
+        if (result.success) {
+            showResult(result.message, 'success');
+            if (form) {
+                form.reset();
+            }
+        } else {
+            showResult(result.message, 'error');
         }
+    } catch (error) {
+        const errorMsg = error instanceof Error ? error.message : 'Errore sconosciuto';
+        showResult(`Errore di connessione al server: ${errorMsg}`, 'error');
+        console.error('Errore nella richiesta:', error);
     }
 }
 
-function showResult(message: string, type: 'error' | 'success'): void {
+function showResult(message: string, type: 'error' | 'success' | 'info'): void {
     if (resultMessage) {
         resultMessage.textContent = message;
         resultMessage.className = `message ${type}`;
