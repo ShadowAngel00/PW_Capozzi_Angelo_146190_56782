@@ -1,7 +1,5 @@
 // Configurazione del server
-export {}; // Rende il file un modulo per evitare conflitti di nomi con script.js
-
-const API_URL: string = 'http://localhost:8080/api/booking';
+const API_URL: string = '/api/booking';
 
 interface BookingData {
     name: string;
@@ -50,13 +48,25 @@ async function submitBooking(data: BookingData): Promise<void> {
     try {
         showResult('Elaborazione prenotazione...', 'info');
         
-        const response = await fetch(`${API_URL}/confirm`, {
+        // Usa URL relativo per evitare problemi di origin
+        const apiUrl = `${API_URL}/confirm`;
+        console.log(`Invio richiesta a: ${apiUrl}`, data);
+        
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         });
+
+        console.log(`Risposta ricevuta (Stato: ${response.status})`);
+        
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({ message: 'Errore risposta server' }));
+            throw new Error(errorData.message || `Errore server: ${response.status}`);
+        }
 
         const result: BookingResponse = await response.json();
 

@@ -1,15 +1,25 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 const bookingService = require('./bookingService');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+    next();
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve static files from the root directory to allow access to Sito_Web assets
+app.use(express.static(path.join(__dirname, '..')));
+// Specifically serve the current directory as well if needed
+app.use('/Applicativo', express.static(__dirname));
 
 // Routes
 app.get('/api/booking/health', (req, res) => {

@@ -17,11 +17,32 @@ Il progetto è organizzato per separare chiaramente i contenuti informativi dall
 ### ⚙️ Applicativo di Booking (`/Applicativo`)
 - **[prenotazione.html](Applicativo/prenotazione.html)**: Interfaccia utente dell'applicativo.
 - **[script.ts](Applicativo/script.ts)**: Logica di business scritta in TypeScript.
-- **[script.js](Applicativo/script.js)**: File compilato per la produzione.
 - **[DOCUMENTO_ARCHITETTURALE_APP.md](Applicativo/DOCUMENTO_ARCHITETTURALE_APP.md)**: Dettagli tecnici della logica.
 
 ### 🎨 Asset e Stile (`/Sito_Web/style`)
 - **[style.css](Sito_Web/style/style.css)**: Framework CSS unificato per l'intero progetto.
+
+## ▶️ Avvio del sito web
+
+Per avviare l'applicazione dal terminale:
+
+```bash
+cd Applicativo
+npm install
+npm start
+```
+
+Apri il browser su:
+
+```text
+http://localhost:3000/Sito_Web/index.html
+```
+
+Se vuoi caricare direttamente la cartella del sito, usa:
+
+```text
+http://localhost:3000/Sito_Web/
+```
 
 ## 🚀 Caratteristiche Principali
 

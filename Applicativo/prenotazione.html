@@ -44,6 +44,60 @@
             <div id="result-message" class="message hidden"></div>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/typescript@latest/lib/typescript.js"></script>
+    <script>
+        async function loadTypeScriptApp() {
+            const resultMessage = document.getElementById('result-message');
+            
+            // Verifica se il file è aperto tramite protocollo file://
+            if (window.location.protocol === 'file:') {
+                if (resultMessage) {
+                    resultMessage.innerHTML = `
+                        <strong>Errore di Sicurezza:</strong> Il browser blocca il caricamento di file TypeScript se apri il file HTML direttamente.<br><br>
+                        <strong>Soluzione:</strong><br>
+                        1. Avvia il server nel terminale con <code>npm start</code><br>
+                        2. Apri <a href="http://localhost:3000/Applicativo/prenotazione.html" target="_blank">http://localhost:3000/Applicativo/prenotazione.html</a>
+                    `;
+                    resultMessage.className = 'message error';
+                    resultMessage.classList.remove('hidden');
+                }
+                return;
+            }
+            
+            try {
+                const response = await fetch(`script.ts?v=${Date.now()}`);
+                if (!response.ok) {
+                    throw new Error(`Impossibile recuperare script.ts (Stato: ${response.status}). Assicurati di aver avviato il server con 'npm start' e di accedere tramite http://localhost:3000`);
+                }
+                const tsSource = await response.text();
+                
+                if (typeof ts === 'undefined') {
+                    throw new Error("Il compilatore TypeScript non è stato caricato. Verifica la connessione internet.");
+                }
+
+                const compiled = ts.transpileModule(tsSource, {
+                    compilerOptions: {
+                        module: ts.ModuleKind.None,
+                        target: ts.ScriptTarget.ES2020,
+                        strict: true
+                    }
+                }).outputText;
+
+                const script = document.createElement('script');
+                script.textContent = compiled;
+                document.body.appendChild(script);
+                console.log('Script TypeScript caricato e compilato con successo.');
+            } catch (error) {
+                console.error('Errore durante il caricamento di script.ts:', error);
+                if (resultMessage) {
+                    resultMessage.textContent = `Errore: ${error.message}`;
+                    resultMessage.className = 'message error';
+                    resultMessage.classList.remove('hidden');
+                }
+            }
+        }
+
+        loadTypeScriptApp();
+    </script>
 </body>
 </html>

@@ -15,8 +15,22 @@ Questo modulo gestisce la logica interattiva per la prenotazione dei biglietti d
 
 - **[prenotazione.html](prenotazione.html)**: L'interfaccia utente del form.
 - **[script.ts](script.ts)**: Il codice sorgente logico in TypeScript.
-- **[script.js](script.js)**: Il file compilato pronto per il browser.
 - **[DOCUMENTO_ARCHITETTURALE_APP.md](DOCUMENTO_ARCHITETTURALE_APP.md)**: Documentazione tecnica dettagliata.
+
+## ▶️ Avvio dal terminale
+
+Dalla cartella `Applicativo`:
+
+```bash
+npm install
+npm start
+```
+
+Apri il browser su:
+
+```text
+http://localhost:3000/Sito_Web/index.html
+```
 
 ## 🛠️ Tecnologie
 
