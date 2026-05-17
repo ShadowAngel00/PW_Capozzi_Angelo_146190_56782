@@ -1,5 +1,9 @@
-/* style.css - Unificato */
+﻿/* style.css - Versione semplificata */
 
+/*
+  Reset globale: azzera margini e padding, usa il box-sizing border-box per
+  gestire larghezze e padding in modo più prevedibile.
+*/
 * {
     margin: 0;
     padding: 0;
@@ -7,28 +11,39 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Layout generale della pagina */
+
 body {
-    background-color: #000000;
-    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    color: #fff;
     line-height: 1.6;
 }
 
+/* Mantiene il footer in basso quando il contenuto è poco */
+main {
+    flex: 1;
+}
+
+/* Header e navigazione */
 header {
-    background-color: #1a1a1a;
-    padding: 16px 32px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px 32px;
+    background: #1a1a1a;
     border-bottom: 2px solid #ff0055;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
+    color: #ff0055;
     font-size: 24px;
     font-weight: bold;
-    color: #ff0055;
 }
 
 nav ul {
@@ -36,29 +51,32 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
+nav li + li {
     margin-left: 32px;
 }
 
-nav ul li a {
+nav a {
+    color: #fff;
     text-decoration: none;
-    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: #ff0055;
 }
 
+/* Sezione hero principale con sfondo e testo centrale */
 .hero {
-    height: 60vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1920&q=80');
+    padding: 32px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
 }
@@ -74,20 +92,31 @@ nav ul li a:hover {
     margin-bottom: 32px;
 }
 
-.btn {
+.btn,
+.btn-large,
+button[type="submit"] {
     display: inline-block;
-    padding: 12.8px 32px;
-    background-color: #ff0055;
-    color: white;
-    text-decoration: none;
+    padding: 14px 28px;
     border-radius: 5px;
+    background: #ff0055;
+    color: #fff;
     font-weight: bold;
-    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background-color: #e6004c;
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+.btn:hover,
+.btn-large:hover,
+button[type="submit"]:hover {
+    background: #e6004c;
+    transform: scale(1.03);
 }
 
 section {
@@ -104,26 +133,25 @@ h2 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
 }
 
 .card {
-    background-color: #1a1a1a;
-    padding: 0;
-    border-radius: 10px;
+    background: #1a1a1a;
     border: 1px solid #333;
+    border-radius: 10px;
     overflow: hidden;
-}
-
-.card-content {
-    padding: 32px;
 }
 
 .card-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+.card-content {
+    padding: 24px;
 }
 
 .card h3 {
@@ -134,7 +162,7 @@ h2 {
 footer {
     text-align: center;
     padding: 32px;
-    background-color: #1a1a1a;
+    background: #1a1a1a;
     margin-top: 64px;
 }
 
@@ -144,25 +172,17 @@ footer {
 }
 
 .registration-link .btn-large {
-    font-size: 17.6px;
-    padding: 16px 32px;
-    background-color: #00f2ff;
+    background: #00f2ff;
     color: #000;
 }
 
-.registration-link .btn-large:hover {
-    background-color: #00d2df;
-}
-
-/* Stili specifici per l'applicativo Booking */
 .container {
     max-width: 500px;
     margin: 32px auto;
-    background-color: #1a1a1a;
     padding: 32px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 0, 85, 0.2);
+    background: #1a1a1a;
     border: 1px solid #333;
+    border-radius: 15px;
 }
 
 #app header {
@@ -170,38 +190,34 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 32px;
-    border-bottom: 1px solid #333;
     padding-bottom: 16px;
-    background-color: transparent;
-    position: static;
+    border-bottom: 1px solid #333;
 }
 
 #app h1 {
     color: #ff0055;
-    font-size: 28.8px;
+    font-size: 28px;
     margin: 0;
 }
 
 .back-link {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #00f2ff;
+    border-radius: 5px;
     color: #00f2ff;
     text-decoration: none;
-    font-size: 14.4px;
     font-weight: bold;
-    transition: all 0.3s;
-    border: 1px solid #00f2ff;
-    padding: 8px 16px;
-    border-radius: 5px;
 }
 
 .back-link:hover {
-    background-color: #00f2ff;
-    color: #000000;
-    box-shadow: 0 0 10px #00f2ff;
+    background: #00f2ff;
+    color: #000;
 }
 
+/* Stili per il modulo di prenotazione */
 .form-group {
     margin-bottom: 24px;
-    text-align: left;
 }
 
 .form-group label {
@@ -210,36 +226,22 @@ footer {
     font-weight: bold;
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
     width: 100%;
-    padding: 12.8px;
+    padding: 13px;
     border-radius: 5px;
     border: 1px solid #444;
-    background-color: #2a2a2a;
-    color: white;
+    background: #2a2a2a;
+    color: #fff;
     font-size: 16px;
 }
 
-.form-group input:focus, .form-group select:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     border-color: #ff0055;
-}
-
-button[type="submit"] {
-    width: 100%;
-    padding: 16px;
-    background-color: #ff0055;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 17.6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-    background-color: #e6004c;
+    background: #2a2a2a;
 }
 
 .message {
@@ -251,13 +253,13 @@ button[type="submit"]:hover {
 }
 
 .message.error {
-    background-color: rgba(255, 68, 68, 0.2);
+    background: rgba(255, 68, 68, 0.2);
     color: #ff4444;
     border: 1px solid #ff4444;
 }
 
 .message.success {
-    background-color: rgba(0, 200, 81, 0.2);
+    background: rgba(0, 200, 81, 0.2);
     color: #00c851;
     border: 1px solid #00c851;
 }
@@ -266,24 +268,24 @@ button[type="submit"]:hover {
     display: none;
 }
 
-/* Gallery Specific */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
 }
+
 .gallery-item {
-    width: 100%;
     height: 200px;
-    background-color: #333;
+    background: #333;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #666;
-    font-size: 12.8px;
+    font-size: 13px;
 }
+
 .gallery-item img {
     width: 100%;
     height: 100%;

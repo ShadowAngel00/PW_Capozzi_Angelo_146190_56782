@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="../Sito_Web/style/style.css">
 </head>
 <body>
+    <!-- Applicativo Booking: pagina di prenotazione unica -->
     <div id="app">
+        <!-- Header dell'applicativo con titolo e link per tornare al sito -->
         <header>
             <h1>Prenotazione Biglietti</h1>
             <a href="../Sito_Web/registrazione.html" class="back-link">← Torna al sito</a>
         </header>
 
+        <!-- Contenitore del modulo di prenotazione -->
         <main class="container">
+            <!-- Modulo di prenotazione con campi per nome, età, biglietti e tipo -->
             <form id="booking-form">
                 <div class="form-group">
                     <label for="name">Nome Partecipante:</label>
@@ -41,6 +45,7 @@
                 <button type="submit" id="submit-btn">CONFERMA PRENOTAZIONE</button>
             </form>
 
+            <!-- Messaggio di esito prenotazione (successo o errore) -->
             <div id="result-message" class="message hidden"></div>
         </main>
     </div>
