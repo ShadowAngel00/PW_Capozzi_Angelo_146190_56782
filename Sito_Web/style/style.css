@@ -292,7 +292,7 @@ footer {
     object-fit: cover;
 }
 
-.card-content a {
+.card-content a:not(.btn) {
     color: #ffffff;
     text-decoration: underline;
 }
