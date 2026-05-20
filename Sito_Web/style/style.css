@@ -150,6 +150,11 @@ h2 {
     object-fit: cover;
 }
 
+.card-hero .card-image {
+     height: 200px;
+     object-position: center;
+ }
+
 .card-content {
     padding: 24px;
 }
