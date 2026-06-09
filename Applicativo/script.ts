@@ -64,10 +64,10 @@ function processBooking(bookingData: BookingData): BookingResponse {
         };
     }
 
-    if (containsNumbers(bookingData.name)) {
+    if (!isValidName(bookingData.name)) {
         return {
             success: false,
-            message: 'Il nome non può contenere numeri.',
+            message: 'Il nome può contenere solo lettere e spazi.',
             data: bookingData
         };
     }
@@ -104,8 +104,9 @@ function processBooking(bookingData: BookingData): BookingResponse {
     };
 }
 
-function containsNumbers(text: string): boolean {
-    return /\d/.test(text);
+function isValidName(text: string): boolean {
+    // Consente solo lettere (inclusi caratteri accentati) e spazi
+    return /^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/.test(text);
 }
 
 function validateAge(bookingData: BookingData): string | null {
